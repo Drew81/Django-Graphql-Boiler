@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1., maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		
+		<meta http-equiv="X_UA_Compatable" content="ie=edge">
+	<title>Services</title>
+</head>
+<body>
+	<section class="container">
+		<h1>Students</h1>
+		<ul>
+			{% for student in students %}
+				<a href="{% url 'update_student' student.id %}">
+					<li>{{ student.name }}</li>
+				</a>
+			{% endfor %}
+		</ul>
+		<a href="{% url 'create_student' %}">New Service</a>
+	</section>
+
+	<section>
+		<div id="app">
+  {{ message }}
+</div>
+
+	</section>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/vue@2.3.4"></script>
+ 
+		<script>
+		 
+		    var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+		 
+		</script>
+</body>
+</html>
